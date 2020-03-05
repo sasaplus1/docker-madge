@@ -1,0 +1,14 @@
+name: test
+
+on:
+  push:
+    tags-ignore:
+      - '*.*.*'
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker build -t ${{ github.repository }} .

@@ -1,4 +1,4 @@
-name: build
+name: publish
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - '*.*.*'
 
 jobs:
-  build:
-    name: build
+  publish:
+    name: publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
