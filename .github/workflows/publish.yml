@@ -9,6 +9,8 @@ jobs:
   publish:
     name: publish
     runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILDKIT: 1
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u sasaplus1 -p "${{ secrets.GITHUB_TOKEN }}" docker.pkg.github.com
