@@ -12,5 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u sasaplus1 -p "${{ secrets.GITHUB_TOKEN }}" docker.pkg.github.com
-      - run: docker build -t docker.pkg.github.com/${{ github.repository }}/${{ github.repository }}:${{ github.ref }} .
-      - run: docker push docker.pkg.github.com/${{ github.repository }}/${{ github.repository }}:${{ github.ref }}
+      - run: docker build -t docker.pkg.github.com/${{ github.repository }}/${{ github.repository }}:${GITHUB_REF##refs/tags/} .
+      - run: docker push docker.pkg.github.com/${{ github.repository }}/${{ github.repository }}:${GITHUB_REF##refs/tags/}
